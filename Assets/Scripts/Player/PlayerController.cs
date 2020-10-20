@@ -14,8 +14,9 @@ public class PlayerController : MonoBehaviour
     [Header("Ground Check")] public Transform groundCheck; // 检测的点
     public float checkRadius; // 检测范围
     public LayerMask groundLayer; // 选择对应的图层
-    [Header("States Check")] public bool isGround; // 状态监测
+    [Header("States Check")] public bool isGround; // 是否在地面的状态检测
     public bool isCanJump; // 是否可以跳跃
+    public bool isJump; // 判断是否正在跳跃
 
     void Start()
     {
@@ -52,6 +53,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isCanJump)
         {
+            // isJump = true;
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             isCanJump = false;
         }
@@ -71,9 +73,15 @@ public class PlayerController : MonoBehaviour
         // 坐标，检测范围，图层
         isGround = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
         if (isGround)
+        {
             rb.gravityScale = 1;
+            isJump = false; // 落地为false
+        }
         else
+        {
             rb.gravityScale = 4;
+            isJump = true;
+        }
     }
 
     // 可视化检测范围 系统方法,不需要在任何Update里进行调用
