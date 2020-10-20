@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: player_ground
+  m_Name: land
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,11 +20,17 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 382f4bb45dfa145a0b93779f9727ee1c, type: 3}
+      value: {fileID: 21300000, guid: 22d1ffc4561a64df5bcf6f66dbfd2493, type: 3}
     - time: 0.05
-      value: {fileID: 21300000, guid: 47052d6adfd474ab186ec9c4df7bbbee, type: 3}
+      value: {fileID: 21300000, guid: efc269cdd40ba4b5c876ecad535f732e, type: 3}
     - time: 0.1
-      value: {fileID: 21300000, guid: c5c8951912ab64d81b5ead95b9ec7910, type: 3}
+      value: {fileID: 21300000, guid: 02ec1779ebc534cc084e27164fe38aa0, type: 3}
+    - time: 0.15
+      value: {fileID: 21300000, guid: 3a577cabaa16b4cc091f3c755b95564f, type: 3}
+    - time: 0.2
+      value: {fileID: 21300000, guid: 5ac1ddbce5e76433f84e0752392e0de9, type: 3}
+    - time: 0.25
+      value: {fileID: 21300000, guid: b0e79ffd3a7e0420c8ae55d11ef171d6, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -44,15 +50,18 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 382f4bb45dfa145a0b93779f9727ee1c, type: 3}
-    - {fileID: 21300000, guid: 47052d6adfd474ab186ec9c4df7bbbee, type: 3}
-    - {fileID: 21300000, guid: c5c8951912ab64d81b5ead95b9ec7910, type: 3}
+    - {fileID: 21300000, guid: 22d1ffc4561a64df5bcf6f66dbfd2493, type: 3}
+    - {fileID: 21300000, guid: efc269cdd40ba4b5c876ecad535f732e, type: 3}
+    - {fileID: 21300000, guid: 02ec1779ebc534cc084e27164fe38aa0, type: 3}
+    - {fileID: 21300000, guid: 3a577cabaa16b4cc091f3c755b95564f, type: 3}
+    - {fileID: 21300000, guid: 5ac1ddbce5e76433f84e0752392e0de9, type: 3}
+    - {fileID: 21300000, guid: b0e79ffd3a7e0420c8ae55d11ef171d6, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.15
+    m_StopTime: 0.3
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -72,8 +81,8 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0
-    functionName: LandFX
+  - time: 0.25
+    functionName: Finish
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

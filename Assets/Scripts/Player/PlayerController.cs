@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     [Header("States Check")] public bool isGround; // 是否在地面的状态检测
     public bool isCanJump; // 是否可以跳跃
     public bool isJump; // 判断是否正在跳跃
+    [Header("Jump FX")] public GameObject landFX;
+    public GameObject jumpFX;
 
     void Start()
     {
@@ -54,6 +56,10 @@ public class PlayerController : MonoBehaviour
         if (isCanJump)
         {
             // isJump = true;
+            // 可以跳跃的时候进行显示
+            jumpFX.SetActive(true);
+            // 获得坐标位置，获得人物坐标+自身位移动
+            jumpFX.transform.position = transform.position + new Vector3(0, -0.45f, 0);
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             isCanJump = false;
         }
@@ -81,7 +87,15 @@ public class PlayerController : MonoBehaviour
         {
             rb.gravityScale = 4;
             isJump = true;
+            
         }
+    }
+
+    // 在人物落地的第一帧显示落地的特效
+    public void LandFX()
+    {
+        landFX.SetActive(true);
+        landFX.transform.position = transform.position + new Vector3(0, -0.72f, 0);
     }
 
     // 可视化检测范围 系统方法,不需要在任何Update里进行调用
