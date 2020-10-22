@@ -56,10 +56,7 @@ public class PlayerController : MonoBehaviour
         if (isCanJump)
         {
             // isJump = true;
-            // 可以跳跃的时候进行显示
-            jumpFX.SetActive(true);
-            // 获得坐标位置，获得人物坐标+自身位移动
-            jumpFX.transform.position = transform.position + new Vector3(0, -0.45f, 0);
+            
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             isCanJump = false;
         }

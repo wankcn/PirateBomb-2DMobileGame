@@ -272,6 +272,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1252725169}
     m_Modifications:
+    - target: {fileID: 1340048837785746584, guid: 0cf1a6e69c62b483599a7dc8b509488c,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1340048837785746586, guid: 0cf1a6e69c62b483599a7dc8b509488c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7217,7 +7222,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855838494}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.95, z: 0}
+  m_LocalPosition: {x: 4.04, y: -4.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7291,6 +7296,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f9249e32ba5f45cca3985a78f8c1788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waitTime: 2
+  bombForce: 6
+  radius: 1.4
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 3584
 --- !u!1001 &2146252493
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7298,6 +7309,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1252725169}
     m_Modifications:
+    - target: {fileID: 1340048837785746584, guid: 0cf1a6e69c62b483599a7dc8b509488c,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1340048837785746586, guid: 0cf1a6e69c62b483599a7dc8b509488c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7373,6 +7389,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1252725169}
     m_Modifications:
+    - target: {fileID: 1340048837785746584, guid: 0cf1a6e69c62b483599a7dc8b509488c,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1340048837785746586, guid: 0cf1a6e69c62b483599a7dc8b509488c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7502,6 +7523,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Red Bottle
       objectReference: {fileID: 0}
+    - target: {fileID: 4557967696312504063, guid: 8c5398539d0d34abd8f5c6ec374e4ce2,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c5398539d0d34abd8f5c6ec374e4ce2, type: 3}
 --- !u!1001 &5894993690794588176
@@ -7580,6 +7606,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1252725169}
     m_Modifications:
+    - target: {fileID: 7994038620306320561, guid: d5c59a3a8106843aa9edba3a26b85229,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7994038620306320563, guid: d5c59a3a8106843aa9edba3a26b85229,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7653,6 +7684,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Blue Bottle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8286113293790183060, guid: 628463896c2dc492a922793f2ffc4a9d,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8286113293790183062, guid: 628463896c2dc492a922793f2ffc4a9d,
         type: 3}
@@ -7777,6 +7813,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8884371181196639486, guid: 366bc6af2929e42b99914842dbeb4dac,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 366bc6af2929e42b99914842dbeb4dac, type: 3}
