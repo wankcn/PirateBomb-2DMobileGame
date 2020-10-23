@@ -9,7 +9,6 @@ public class Bomb : MonoBehaviour
     private Collider2D coll; // 用于脱离炸弹碰撞体
     private Rigidbody2D rb; // 用于设置炸弹重力防止掉出屏幕
 
-
     // 记录炸弹引爆的开始时间以及等待爆炸的时间
     private float startTime;
     public float waitTime;
