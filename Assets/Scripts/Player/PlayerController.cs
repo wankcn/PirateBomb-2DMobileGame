@@ -19,6 +19,9 @@ public class PlayerController : MonoBehaviour
     public bool isJump; // 判断是否正在跳跃
     [Header("Jump FX")] public GameObject landFX;
     public GameObject jumpFX;
+    [Header("Attack Settings")] public GameObject bombPrefab; // 获得炸弹
+    public float nextAttack = 0; // 下一次攻击时间 当前时间+cd
+    public float attackRate = 0; // cd时间
 
     void Start()
     {
@@ -56,10 +59,22 @@ public class PlayerController : MonoBehaviour
         if (isCanJump)
         {
             // isJump = true;
-            
+
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             isCanJump = false;
         }
+    }
+    
+    // 玩家攻击方法 
+    public void Attack()
+    {
+        // 当前时间>下一次可攻击时间
+        if (Time.time > nextAttack)
+        {
+            // 在场景中生成炸弹
+            Instantiate()
+        }
+
     }
 
     // 用来收集Player输入的操作
@@ -84,7 +99,6 @@ public class PlayerController : MonoBehaviour
         {
             rb.gravityScale = 4;
             isJump = true;
-            
         }
     }
 
