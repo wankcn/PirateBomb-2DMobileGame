@@ -64,17 +64,18 @@ public class PlayerController : MonoBehaviour
             isCanJump = false;
         }
     }
-    
+
     // 玩家攻击方法 
     public void Attack()
     {
         // 当前时间>下一次可攻击时间
         if (Time.time > nextAttack)
         {
-            // 在场景中生成炸弹
-            Instantiate()
+            // 在场景中生成炸弹（生成物体，坐标，角度）
+            Instantiate(bombPrefab, transform.position, bombPrefab.transform.rotation);
+            // 重置下一次可攻击时间
+            nextAttack = Time.time + attackRate;
         }
-
     }
 
     // 用来收集Player输入的操作
@@ -83,6 +84,7 @@ public class PlayerController : MonoBehaviour
         // 当按下跳跃按键的时候同时也要检测是否在地面
         if (Input.GetButtonDown("Jump") && isGround)
             isCanJump = true;
+        
     }
 
     // 地面检测函数使用圆形检测
