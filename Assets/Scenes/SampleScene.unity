@@ -503,6 +503,10 @@ MonoBehaviour:
   isJump: 0
   landFX: {fileID: 785641101}
   jumpFX: {fileID: 76298804}
+  bombPrefab: {fileID: 1476405292618614257, guid: 37b58ae4a316745cf894bae5c1214599,
+    type: 3}
+  nextAttack: 0
+  attackRate: 2
 --- !u!95 &456103707
 Animator:
   serializedVersion: 3
@@ -3304,7 +3308,7 @@ GameObject:
   - component: {fileID: 785641105}
   - component: {fileID: 785641104}
   - component: {fileID: 785641106}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: LandFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}

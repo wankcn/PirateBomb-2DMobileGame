@@ -84,7 +84,8 @@ public class PlayerController : MonoBehaviour
         // 当按下跳跃按键的时候同时也要检测是否在地面
         if (Input.GetButtonDown("Jump") && isGround)
             isCanJump = true;
-        
+        if(Input.GetKeyDown(KeyCode.J))
+            Attack();
     }
 
     // 地面检测函数使用圆形检测
