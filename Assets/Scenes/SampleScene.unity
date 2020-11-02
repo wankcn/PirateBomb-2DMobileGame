@@ -7541,6 +7541,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a279f138e49364ee7b32963aa131c74b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2
+  ponitA: {fileID: 2051421722}
+  pointB: {fileID: 1402539210}
+  targetPonit: {fileID: 0}
+  attackList: []
 --- !u!1001 &1340048837270965356
 PrefabInstance:
   m_ObjectHideFlags: 0
