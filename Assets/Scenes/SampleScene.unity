@@ -7538,7 +7538,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2146906060}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a279f138e49364ee7b32963aa131c74b, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f33facb0d8aa438c88a47066260710a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
@@ -7546,6 +7546,7 @@ MonoBehaviour:
   pointB: {fileID: 1402539210}
   targetPonit: {fileID: 0}
   attackList: []
+  hp: 0
 --- !u!1001 &1340048837270965356
 PrefabInstance:
   m_ObjectHideFlags: 0

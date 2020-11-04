@@ -5,6 +5,15 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    /// 敌人的当前的状态 (巡逻或者攻击)
+    private EnemyBaseState _currentState;
+
+    // 获取巡逻状态的对象
+    public PatrolState patrolState = new PatrolState();
+
+    // 获取攻击状态的对象
+    public AttackState attackState = new AttackState();
+
     [Header("Movement")] public float speed; // 移动速度
     public Transform ponitA, pointB;
     public Transform targetPonit; // 目标点
@@ -13,15 +22,26 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        SwitchPoint();
+        // 开始游戏直接进入巡逻状态
+        TransitionToState(patrolState);
     }
 
     void Update()
     {
-        // 无限趋近于目标点
-        if (Mathf.Abs(transform.position.x - targetPonit.position.x) < 0.01f)
-            SwitchPoint();
-        MoveToTarget();
+        // 当前敌人执行当前状态
+        _currentState.OnUpdate(this);
+    }
+
+    /// <summary>
+    /// 切换状态的方法
+    /// </summary>
+    /// <param name="state">传入一个状态机对象切换敌人的状态，切换之后进入该状态</param>
+    public void TransitionToState(EnemyBaseState state)
+    {
+        // 切换状态 当前状态 = 传入的状态
+        _currentState = state;
+        // 切换之后敌人进入当前状态
+        _currentState.EnterState(this);
     }
 
     /// 移动的方法
@@ -39,8 +59,8 @@ public class Enemy : MonoBehaviour
     }
 
 
-    /// 对炸弹进行技能攻击
-    public void SkillAction()
+    /// 对炸弹进行技能攻击 虚方法，让子类可以重写
+    public virtual void SkillAction()
     {
     }
 
