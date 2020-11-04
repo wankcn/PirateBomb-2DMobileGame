@@ -5,20 +5,39 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    /// 用于控制动画状态机
+    public Animator anim;
+
+    /// 控制动画的状态 Animator中的Parameter
+    public int animState;
+
     /// 敌人的当前的状态 (巡逻或者攻击)
     private EnemyBaseState _currentState;
 
-    // 获取巡逻状态的对象
+    /// 获取巡逻状态的对象
     public PatrolState patrolState = new PatrolState();
 
-    // 获取攻击状态的对象
+    /// 获取攻击状态的对象
     public AttackState attackState = new AttackState();
 
     [Header("Movement")] public float speed; // 移动速度
     public Transform ponitA, pointB;
     public Transform targetPonit; // 目标点
-
+    
+    /// 攻击列表，敌人的可攻击范围检测到物体就添加进这个列表
     public List<Transform> attackList = new List<Transform>();
+
+    // 初始化 方便子类进行修改
+    public virtual void Init()
+    {
+        anim = GetComponent<Animator>();
+    }
+
+    // 确保游戏一开始变量有值，优先State执行
+    private void Awake()
+    {
+        Init();
+    }
 
     void Start()
     {
@@ -30,6 +49,8 @@ public class Enemy : MonoBehaviour
     {
         // 当前敌人执行当前状态
         _currentState.OnUpdate(this);
+        // 持续更新动画，保证动画与Parameter保持一致
+        anim.SetInteger("state", animState);
     }
 
     /// <summary>
