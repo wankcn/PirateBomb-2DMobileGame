@@ -77,12 +77,14 @@ public class Enemy : MonoBehaviour
     /// 攻击玩家
     public void AttackAction()
     {
+        Debug.Log("普工");
     }
 
 
     /// 对炸弹进行技能攻击 虚方法，让子类可以重写
     public virtual void SkillAction()
     {
+        Debug.Log("技能");
     }
 
     /// 巡逻过程中需要左右翻转 他一定是在移动的过程中进行调用的

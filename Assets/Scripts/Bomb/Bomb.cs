@@ -13,7 +13,7 @@ public class Bomb : MonoBehaviour
     private float startTime;
     public float waitTime;
 
-    // 爆炸作用力
+    /// 爆炸作用力
     public float bombForce;
 
     // 检测元素
@@ -35,14 +35,7 @@ public class Bomb : MonoBehaviour
             anim.Play("bomb_explosion");
     }
 
-    // 检测范围可视化
-    public void OnDrawGizmos()
-    {
-        // 中心点/检测范围
-        Gizmos.DrawWireSphere(transform.position, radius);
-    }
-
-    // 爆炸效果，是一个Animation Event
+    /// 爆炸效果，是一个Animation Event
     public void Explosion()
     {
         // 检测范围之前脱离炸弹的碰撞体
@@ -63,5 +56,12 @@ public class Bomb : MonoBehaviour
     public void Destroy()
     {
         Destroy(gameObject);
+    }
+
+    // 检测范围可视化
+    public void OnDrawGizmos()
+    {
+        // 中心点/检测范围
+        Gizmos.DrawWireSphere(transform.position, radius);
     }
 }

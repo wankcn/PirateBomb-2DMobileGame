@@ -7,14 +7,32 @@ public class AttackState : EnemyBaseState
 {
     public override void EnterState(Enemy enemy)
     {
-        Debug.Log("发现敌人！！！");
-        // TODO 刚进入攻击状态
+        // 先把当前目标换到检测列表中的第一个变量
+        enemy.targetPonit = enemy.attackList[0];
     }
 
     public override void OnUpdate(Enemy enemy)
     {
-        // 如果攻击列表内有物体，敌人就进行攻击
-        if (enemy.attackList.Count <= 0)
+        // 没有对象可以进行攻击，转换为巡逻状态
+        if (enemy.attackList.Count == 0)
             enemy.TransitionToState(enemy.patrolState);
+        if (enemy.attackList.Count > 1)
+        {
+            for (int i = 0; i < enemy.attackList.Count; i++)
+            {
+                // 修改距离最近的点作为目标点
+                if (Mathf.Abs(enemy.transform.position.x - enemy.attackList[i].position.x) <
+                    Mathf.Abs(enemy.transform.position.x - enemy.targetPonit.position.x))
+                    enemy.targetPonit = enemy.attackList[i];
+            }
+        }
+        
+        // 根据标签类型选择攻击方式 在移动之前
+        if(enemy.targetPonit.CompareTag("Player"))
+            enemy.AttackAction();
+        if(enemy.targetPonit.CompareTag("Bomb"))
+            enemy.SkillAction();
+        
+        enemy.MoveToTarget();
     }
 }
