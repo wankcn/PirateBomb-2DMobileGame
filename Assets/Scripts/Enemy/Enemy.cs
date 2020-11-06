@@ -23,7 +23,14 @@ public class Enemy : MonoBehaviour
     [Header("Movement")] public float speed; // 移动速度
     public Transform ponitA, pointB;
     public Transform targetPonit; // 目标点
-    
+
+    [Header("Attack Settings")] public float attackRate; // 普攻击CD 技能CD
+    public float skillRate; //  技能CD
+    public float attackRange; // 攻击距离
+    public float skillRange; // 技能打击距离
+    private float nextAttack = 0;
+
+
     /// 攻击列表，敌人的可攻击范围检测到物体就添加进这个列表
     public List<Transform> attackList = new List<Transform>();
 
@@ -77,14 +84,33 @@ public class Enemy : MonoBehaviour
     /// 攻击玩家
     public void AttackAction()
     {
-        Debug.Log("普工");
+        // 先判断攻击距离
+        if (Vector2.Distance(transform.position, targetPonit.position) < attackRange)
+        {
+            // 释放之前先判断CD冷却
+            if (Time.time > nextAttack)
+            {
+                // 播放攻击动画
+                Debug.Log("普通攻击");
+                nextAttack = Time.time + attackRate;
+            }
+        }
     }
-
 
     /// 对炸弹进行技能攻击 虚方法，让子类可以重写
     public virtual void SkillAction()
     {
-        Debug.Log("技能");
+        // 先判断攻击距离
+        if (Vector2.Distance(transform.position, targetPonit.position) < skillRange)
+        {
+            // 释放之前先判断CD冷却
+            if (Time.time > nextAttack)
+            {
+                // 播放攻击动画
+                Debug.Log("技能攻击");
+                nextAttack = Time.time + skillRate;
+            }
+        }
     }
 
     /// 巡逻过程中需要左右翻转 他一定是在移动的过程中进行调用的

@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 456103708}
   m_Layer: 13
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7212,7 +7212,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.136729, y: -0.08506203}
+  m_Offset: {x: -1.2666655, y: -0.08506203}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -7223,7 +7223,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.1497312, y: 1.9743366}
+  m_Size: {x: 3.409604, y: 1.9743366}
   m_EdgeRadius: 0
 --- !u!4 &1393284719 stripped
 Transform:
@@ -7255,7 +7255,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1402539209}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.46, y: -0.007999897, z: 0}
+  m_LocalPosition: {x: 3.98, y: -0.007999897, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 379086862}
@@ -7291,7 +7291,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2051421721}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.72, y: -0.007999897, z: 0}
+  m_LocalPosition: {x: -4.57, y: -0.007999897, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 379086862}
@@ -7541,10 +7541,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f33facb0d8aa438c88a47066260710a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  animState: 0
   speed: 2
   ponitA: {fileID: 2051421722}
   pointB: {fileID: 1402539210}
   targetPonit: {fileID: 0}
+  attackRate: 2
+  skillRate: 3
+  attackRange: 1
+  skillRange: 2
   attackList: []
   hp: 0
 --- !u!1001 &1340048837270965356
