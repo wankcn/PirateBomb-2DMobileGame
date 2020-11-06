@@ -91,7 +91,8 @@ public class Enemy : MonoBehaviour
             if (Time.time > nextAttack)
             {
                 // 播放攻击动画
-                Debug.Log("普通攻击");
+                anim.SetTrigger("attack");
+                // 计算下一次可攻击时间
                 nextAttack = Time.time + attackRate;
             }
         }
@@ -107,7 +108,7 @@ public class Enemy : MonoBehaviour
             if (Time.time > nextAttack)
             {
                 // 播放攻击动画
-                Debug.Log("技能攻击");
+                anim.SetTrigger("skill");
                 nextAttack = Time.time + skillRate;
             }
         }
