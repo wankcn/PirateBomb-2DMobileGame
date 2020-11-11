@@ -17,7 +17,7 @@ public class AttackState : EnemyBaseState
         // 没有对象可以进行攻击，转换为巡逻状态
         if (enemy.attackList.Count == 0)
             enemy.TransitionToState(enemy.patrolState);
-        if (enemy.attackList.Count > 1)
+        else if (enemy.attackList.Count > 1)
         {
             for (int i = 0; i < enemy.attackList.Count; i++)
             {
@@ -27,6 +27,8 @@ public class AttackState : EnemyBaseState
                     enemy.targetPonit = enemy.attackList[i];
             }
         }
+        else enemy.targetPonit = enemy.attackList[0];
+
 
         // 根据标签类型选择攻击方式 在移动之前
         if (enemy.targetPonit.CompareTag("Player"))

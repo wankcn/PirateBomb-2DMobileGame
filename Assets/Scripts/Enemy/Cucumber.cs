@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class Cucumber : Enemy
 {
-    public int hp;
-
-    public override void SkillAction()
+    /// 事件方法执行在吹灭动画里
+    public void SetOff()
     {
-        base.SkillAction();
+        targetPonit.GetComponent<Bomb>().TurnOff();
     }
 }

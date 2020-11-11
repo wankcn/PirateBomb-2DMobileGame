@@ -30,9 +30,12 @@ public class Bomb : MonoBehaviour
 
     void Update()
     {
-        // 如果当前的游戏时间大于开始时间+等待时间
-        if (Time.time > startTime + waitTime)
-            anim.Play("bomb_explosion");
+        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("bomb_off"))
+        {
+            // 如果当前的游戏时间大于开始时间+等待时间
+            if (Time.time > startTime + waitTime)
+                anim.Play("bomb_explosion");
+        }
     }
 
     /// 爆炸效果，是一个Animation Event
@@ -49,6 +52,12 @@ public class Bomb : MonoBehaviour
             // 判断物体的方向
             Vector3 pos = transform.position - i.transform.position;
             i.GetComponent<Rigidbody2D>().AddForce((-pos + Vector3.up) * bombForce, ForceMode2D.Impulse);
+
+            // 判断周围的是否是炸弹并且处于熄灭状态把熄灭的那颗炸弹点燃
+            if (i.CompareTag("Bomb")&& i.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("bomb_off")) 
+            {
+                i.GetComponent<Bomb>().TurnOn();
+            }
         }
     }
 
@@ -56,6 +65,21 @@ public class Bomb : MonoBehaviour
     public void Destroy()
     {
         Destroy(gameObject);
+    }
+
+    /// 炸弹被吹灭的方法
+    public void TurnOff()
+    {
+        anim.Play("bomb_off");
+        gameObject.layer = LayerMask.NameToLayer("NPC");
+    }
+
+    /// 炸弹被重新点燃的方法
+    public void TurnOn()
+    {
+        startTime = Time.time;
+        anim.Play("bomb_on");
+        gameObject.layer = LayerMask.NameToLayer("Bomb");
     }
 
     // 检测范围可视化

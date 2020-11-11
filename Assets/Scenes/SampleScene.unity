@@ -524,7 +524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d60fb1dd2cc734f5aa24ad583c109966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   jumpForce: 15
   groundCheck: {fileID: 116401352}
   checkRadius: 0.5
@@ -539,7 +539,7 @@ MonoBehaviour:
   bombPrefab: {fileID: 1476405292618614257, guid: 37b58ae4a316745cf894bae5c1214599,
     type: 3}
   nextAttack: 0
-  attackRate: 2
+  attackRate: 1
 --- !u!95 &456103707
 Animator:
   serializedVersion: 3
@@ -7623,7 +7623,6 @@ MonoBehaviour:
   attackRange: 1
   skillRange: 2
   attackList: []
-  hp: 0
 --- !u!1001 &1340048837270965356
 PrefabInstance:
   m_ObjectHideFlags: 0
