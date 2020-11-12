@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    /// 获得敌人头顶的警示
+    private GameObject alarmSign;
+
     /// 用于控制动画状态机
     public Animator anim;
 
@@ -41,6 +44,7 @@ public class Enemy : MonoBehaviour
     public virtual void Init()
     {
         anim = GetComponent<Animator>();
+        alarmSign = transform.GetChild(0).gameObject;
     }
 
     // 确保游戏一开始变量有值，优先State执行
@@ -154,5 +158,24 @@ public class Enemy : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         attackList.Remove(other.transform);
+    }
+
+    /// 物体刚一进入检测范围播放动画 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        // 开始一个协程 
+        StartCoroutine(OnAlarm());
+    }
+
+    /// 启动播放等待动画播完关闭 协程方式
+    IEnumerator OnAlarm()
+    {
+        alarmSign.SetActive(true);
+        // 等待几秒后继续执行，这里的时间获取动画片段的时间 层级默认是0，第一个动画片段[0]的长度
+        yield return new WaitForSeconds(
+            alarmSign.GetComponent<Animator>().GetCurrentAnimatorClipInfo(0)[0].clip.length);
+        alarmSign.SetActive(false);
+
+        // yield return null; // 当上一步执行完，没有返回等待下一帧继续执行后面的代码
     }
 }
