@@ -16,6 +16,9 @@ public class Bomb : MonoBehaviour
     /// 爆炸作用力
     public float bombForce;
 
+    /// 炸弹造成的伤害值
+    private float bombDamage = 3.0f;
+
     // 检测元素
     [Header("Check")] public float radius; // 范围半径
     public LayerMask targetLayer; // 受爆炸影响的层级
@@ -54,10 +57,13 @@ public class Bomb : MonoBehaviour
             i.GetComponent<Rigidbody2D>().AddForce((-pos + Vector3.up) * bombForce, ForceMode2D.Impulse);
 
             // 判断周围的是否是炸弹并且处于熄灭状态把熄灭的那颗炸弹点燃
-            if (i.CompareTag("Bomb")&& i.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("bomb_off")) 
+            if (i.CompareTag("Bomb") && i.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("bomb_off"))
             {
                 i.GetComponent<Bomb>().TurnOn();
             }
+
+            if (i.CompareTag("Player"))
+                i.GetComponent<IDamageable>().GetHit(bombDamage);
         }
     }
 

@@ -30,6 +30,9 @@ public class Enemy : MonoBehaviour
     public float skillRange; // 技能打击距离
     private float nextAttack = 0;
 
+    [Header("Base State")] public float enemyHP;
+    public bool isDead;
+
 
     /// 攻击列表，敌人的可攻击范围检测到物体就添加进这个列表
     public List<Transform> attackList = new List<Transform>();
@@ -54,6 +57,9 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        anim.SetBool("dead", isDead);
+        if (isDead)
+            return;
         // 当前敌人执行当前状态
         _currentState.OnUpdate(this);
         // 持续更新动画，保证动画与Parameter保持一致

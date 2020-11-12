@@ -540,6 +540,8 @@ MonoBehaviour:
     type: 3}
   nextAttack: 0
   attackRate: 1
+  playerHP: 3
+  isDead: 0
 --- !u!95 &456103707
 Animator:
   serializedVersion: 3
@@ -3595,7 +3597,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3635241f70cf64a069bf8d35353cd7c6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7463,7 +7465,7 @@ GameObject:
   - component: {fileID: 2146906066}
   m_Layer: 10
   m_Name: SpriteSetting
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7622,6 +7624,8 @@ MonoBehaviour:
   skillRate: 3
   attackRange: 1
   skillRange: 2
+  enemyHP: 3
+  isDead: 0
   attackList: []
 --- !u!1001 &1340048837270965356
 PrefabInstance:

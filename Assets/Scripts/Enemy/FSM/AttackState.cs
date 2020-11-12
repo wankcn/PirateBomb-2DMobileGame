@@ -27,7 +27,8 @@ public class AttackState : EnemyBaseState
                     enemy.targetPonit = enemy.attackList[i];
             }
         }
-        else enemy.targetPonit = enemy.attackList[0];
+        else if (enemy.attackList.Count == 1)
+            enemy.targetPonit = enemy.attackList[0];
 
 
         // 根据标签类型选择攻击方式 在移动之前
