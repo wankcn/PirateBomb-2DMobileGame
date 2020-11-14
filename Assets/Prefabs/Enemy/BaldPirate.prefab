@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 1595262329191150148}
   - component: {fileID: 1595262329191150146}
   - component: {fileID: 1595262329191150149}
-  - component: {fileID: 1595262329191150147}
+  - component: {fileID: 1573652536}
   m_Layer: 10
   m_Name: SpriteSetting
   m_TagString: Player
@@ -404,7 +404,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2264173, y: 1.867456}
   m_EdgeRadius: 0
---- !u!114 &1595262329191150147
+--- !u!114 &1573652536
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -413,19 +413,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1595262329191150153}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a279f138e49364ee7b32963aa131c74b, type: 3}
+  m_Script: {fileID: 11500000, guid: 3935f3a564901439b95fff97d93bf1e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
   animState: 0
-  speed: 0
-  ponitA: {fileID: 0}
-  pointB: {fileID: 0}
+  speed: 3
+  ponitA: {fileID: 1595262327808624559}
+  pointB: {fileID: 1595262327948440530}
   targetPonit: {fileID: 0}
-  attackRate: 0
-  skillRate: 0
-  attackRange: 0
-  skillRange: 0
-  enemyHP: 0
+  attackRate: 2
+  skillRate: 3
+  attackRange: 1
+  skillRange: 2
+  enemyHP: 5
   isDead: 0
   attackList: []

@@ -163,6 +163,7 @@ GameObject:
   - component: {fileID: 2486907497091367518}
   - component: {fileID: 2486907497091367519}
   - component: {fileID: 2486907497091367516}
+  - component: {fileID: 112854719}
   m_Layer: 10
   m_Name: SpriteSetting
   m_TagString: Player
@@ -281,7 +282,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!95 &2486907497091367516
 Animator:
@@ -302,6 +303,31 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &112854719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2486907497091367459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2e22774bd3d744a4b3a8ef5d39dbfaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  animState: 0
+  speed: 3
+  ponitA: {fileID: 2486907496316081959}
+  pointB: {fileID: 2486907496728572430}
+  targetPonit: {fileID: 0}
+  attackRate: 2
+  skillRate: 3
+  attackRange: 1
+  skillRange: 2
+  enemyHP: 6
+  isDead: 0
+  attackList: []
 --- !u!1 &2486907497927577598
 GameObject:
   m_ObjectHideFlags: 0

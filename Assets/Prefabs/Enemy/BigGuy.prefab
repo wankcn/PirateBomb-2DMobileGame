@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 1110725261856741212}
   - component: {fileID: 1110725261856741213}
   - component: {fileID: 1110725261856741211}
+  - component: {fileID: 733118156942756081}
   m_Layer: 10
   m_Name: SpriteSetting
   m_TagString: Player
@@ -269,6 +270,31 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &733118156942756081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110725261856741184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 281d5a168e81a40f091e81ddaa7d25a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  animState: 0
+  speed: 2
+  ponitA: {fileID: 1110725261676430700}
+  pointB: {fileID: 1110725261822741635}
+  targetPonit: {fileID: 0}
+  attackRate: 2
+  skillRate: 3
+  attackRange: 1
+  skillRange: 2
+  enemyHP: 5
+  isDead: 0
+  attackList: []
 --- !u!1 &1110725262207333743
 GameObject:
   m_ObjectHideFlags: 0
