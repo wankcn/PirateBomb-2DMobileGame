@@ -14,6 +14,9 @@ public class AttackState : EnemyBaseState
 
     public override void OnUpdate(Enemy enemy)
     {
+        if (enemy.hasBomb)
+            return;
+        
         // 没有对象可以进行攻击，转换为巡逻状态
         if (enemy.attackList.Count == 0)
             enemy.TransitionToState(enemy.patrolState);

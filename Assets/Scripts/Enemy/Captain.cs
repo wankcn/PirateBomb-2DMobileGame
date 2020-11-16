@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Captain : Enemy, IDamageable
 {
-   
-
     public void GetHit(float damage)
     {
         enemyHP -= damage;

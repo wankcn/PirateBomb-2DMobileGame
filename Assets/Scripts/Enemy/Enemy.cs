@@ -36,6 +36,9 @@ public class Enemy : MonoBehaviour
     [Header("Base State")] public float enemyHP;
     public bool isDead;
 
+    /// 是否有炸弹
+    public bool hasBomb;
+
 
     /// 攻击列表，敌人的可攻击范围检测到物体就添加进这个列表
     public List<Transform> attackList = new List<Transform>();
@@ -149,8 +152,8 @@ public class Enemy : MonoBehaviour
     /// 物体进入检测范围就添加进攻击列表里
     private void OnTriggerStay2D(Collider2D other)
     {
-        // 如果攻击列表不包含，再添加进列表里 添加的是transform
-        if (!attackList.Contains(other.transform))
+        // 如果攻击列表不包含，再添加进列表里 添加的是transform （人物没有炸弹才进行判断，有炸弹就不添加进列表里）
+        if (!attackList.Contains(other.transform) && !hasBomb)
             attackList.Add(other.transform);
     }
 
