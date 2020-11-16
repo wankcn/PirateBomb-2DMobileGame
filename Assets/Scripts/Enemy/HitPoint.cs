@@ -9,9 +9,11 @@ public class HitPoint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        
         if (other.CompareTag("Player"))
         {
             // TODO 玩家受到伤害
+            Debug.Log("test get hit");
             other.GetComponent<IDamageable>().GetHit(attackDamage);
         }
 
