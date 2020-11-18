@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class Whale : Enemy, IDamageable
 {
-  
+    /// 每次吞下炸弹体积扩大20%
+    private float scale = 1.2f;
+
+    private int tag = 0;
+
 
     public void GetHit(float damage)
     {
@@ -16,5 +20,15 @@ public class Whale : Enemy, IDamageable
         }
 
         anim.SetTrigger("hit");
+    }
+
+    public void Swalow()
+    {
+        targetPonit.GetComponent<Bomb>().TurnOff();
+        targetPonit.gameObject.SetActive(false);
+
+        // 扩大体积
+        transform.localScale *= scale;
+        tag += 1;
     }
 }

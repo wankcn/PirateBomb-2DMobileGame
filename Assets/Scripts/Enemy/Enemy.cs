@@ -62,7 +62,7 @@ public class Enemy : MonoBehaviour
         TransitionToState(patrolState);
     }
 
-    void Update()
+    public virtual void Update()
     {
         anim.SetBool("dead", isDead);
         if (isDead)
@@ -152,8 +152,9 @@ public class Enemy : MonoBehaviour
     /// 物体进入检测范围就添加进攻击列表里
     private void OnTriggerStay2D(Collider2D other)
     {
-        // 如果攻击列表不包含，再添加进列表里 添加的是transform （人物没有炸弹才进行判断，有炸弹就不添加进列表里）
-        if (!attackList.Contains(other.transform) && !hasBomb)
+        // 如果攻击列表不包含，再添加进列表里 添加的是transform
+        // （人物没有炸弹才进行判断，有炸弹就不添加进列表里）如果死亡不添加进攻击列表
+        if (!attackList.Contains(other.transform) && !hasBomb && !isDead)
             attackList.Add(other.transform);
     }
 
@@ -166,8 +167,9 @@ public class Enemy : MonoBehaviour
     /// 物体刚一进入检测范围播放动画 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // 开始一个协程 
-        StartCoroutine(OnAlarm());
+        // 不是死亡状态下开始一个协程 
+        if (!isDead)
+            StartCoroutine(OnAlarm());
     }
 
     /// 启动播放等待动画播完关闭 协程方式
