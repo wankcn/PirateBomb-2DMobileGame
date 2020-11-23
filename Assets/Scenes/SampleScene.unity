@@ -390,6 +390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d48bd5b881e84c63a82c1fb376c65ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBar: {fileID: 1061402067}
 --- !u!4 &216579851
 Transform:
   m_ObjectHideFlags: 0
@@ -7942,7 +7943,7 @@ PrefabInstance:
     - target: {fileID: 1110725262207333743, guid: dd4d5d573d9344899a69d74e1d67caf9,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd4d5d573d9344899a69d74e1d67caf9, type: 3}
@@ -8094,7 +8095,7 @@ PrefabInstance:
     - target: {fileID: 1595262327801302729, guid: 96b310120a1484604b8f001b7787702c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96b310120a1484604b8f001b7787702c, type: 3}

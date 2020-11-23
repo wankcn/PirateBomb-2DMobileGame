@@ -151,6 +151,9 @@ public class PlayerController : MonoBehaviour, IDamageable
             }
 
             anim.SetTrigger("hit");
+            
+            // 更新UI面板你
+            UIManager.instance.UpdateHP(playerHP);
         }
     }
 }
