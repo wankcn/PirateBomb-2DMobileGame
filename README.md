@@ -13,3 +13,9 @@
 ## PirateBombFramework
 
 游戏的代码结构和框架
+
+
+
+##  EnemyData
+
+游戏中的敌人设置参数表
