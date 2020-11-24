@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
     /// 获得血量UI
     public GameObject healthBar;
 
+    [Header("UI Elements")] public GameObject pauseMenu;
+
     private void Awake()
     {
         if (instance == null)
@@ -46,5 +48,21 @@ public class UIManager : MonoBehaviour
                 healthBar.transform.GetChild(2).gameObject.SetActive(false);
                 break;
         }
+    }
+
+
+    // 点击暂停按钮，讲暂停界面显示出来并且游戏暂停
+    public void PauseGame()
+    {
+        pauseMenu.SetActive(true);
+        // 游戏暂停
+        Time.timeScale = 0;
+    }
+
+    public void ResumeGame()
+    {
+        pauseMenu.SetActive(false);
+        // 游戏暂停
+        Time.timeScale = 1;
     }
 }
