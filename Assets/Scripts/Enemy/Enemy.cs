@@ -39,6 +39,9 @@ public class Enemy : MonoBehaviour
     /// 是否有炸弹
     public bool hasBomb;
 
+    /// 是否是Boss
+    public bool isBoss;
+
 
     /// 攻击列表，敌人的可攻击范围检测到物体就添加进这个列表
     public List<Transform> attackList = new List<Transform>();
