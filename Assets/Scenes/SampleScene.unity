@@ -466,6 +466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1061402067}
   pauseMenu: {fileID: 1959103948}
+  bossHealthBar: {fileID: 753806055}
 --- !u!4 &216579851
 Transform:
   m_ObjectHideFlags: 0
@@ -3903,7 +3904,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 10
   m_WholeNumbers: 0
-  m_Value: 6.8
+  m_Value: 10
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -9200,6 +9201,16 @@ PrefabInstance:
       propertyPath: force
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 733118156942756081, guid: dd4d5d573d9344899a69d74e1d67caf9,
+        type: 3}
+      propertyPath: enemyHP
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 733118156942756081, guid: dd4d5d573d9344899a69d74e1d67caf9,
+        type: 3}
+      propertyPath: isBoss
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1110725262207333742, guid: dd4d5d573d9344899a69d74e1d67caf9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9263,7 +9274,7 @@ PrefabInstance:
     - target: {fileID: 1110725262207333743, guid: dd4d5d573d9344899a69d74e1d67caf9,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd4d5d573d9344899a69d74e1d67caf9, type: 3}
@@ -9415,7 +9426,7 @@ PrefabInstance:
     - target: {fileID: 1595262327801302729, guid: 96b310120a1484604b8f001b7787702c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96b310120a1484604b8f001b7787702c, type: 3}

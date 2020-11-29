@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 // 单例模式
 public class UIManager : MonoBehaviour
@@ -12,6 +14,7 @@ public class UIManager : MonoBehaviour
     public GameObject healthBar;
 
     [Header("UI Elements")] public GameObject pauseMenu;
+    public Slider bossHealthBar; // boss的血量
 
     private void Awake()
     {
@@ -64,5 +67,17 @@ public class UIManager : MonoBehaviour
         pauseMenu.SetActive(false);
         // 游戏暂停
         Time.timeScale = 1;
+    }
+
+    /// 设置Boss的血量
+    public void SetBossHealth(float hp)
+    {
+        bossHealthBar.maxValue = hp;
+    }
+
+    /// 设置更新Boss血量
+    public void UpdateBossHealth(float hp)
+    {
+        bossHealthBar.value = hp;
     }
 }

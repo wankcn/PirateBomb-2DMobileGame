@@ -63,17 +63,25 @@ public class Enemy : MonoBehaviour
     {
         // 开始游戏直接进入巡逻状态
         TransitionToState(patrolState);
+        // Slider绑定boss血量
+        if(isBoss)
+            UIManager.instance.SetBossHealth(enemyHP);
     }
 
     public virtual void Update()
     {
         anim.SetBool("dead", isDead);
+        // 实时更新血量
+        if(isBoss)
+            UIManager.instance.UpdateBossHealth(enemyHP);
+        // 死亡终止活动
         if (isDead)
             return;
         // 当前敌人执行当前状态
         _currentState.OnUpdate(this);
         // 持续更新动画，保证动画与Parameter保持一致
         anim.SetInteger("state", animState);
+        
     }
 
     /// <summary>
