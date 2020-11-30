@@ -70,10 +70,11 @@ public class Enemy : MonoBehaviour
 
     public virtual void Update()
     {
-        anim.SetBool("dead", isDead);
-        // 实时更新血量
+        // 实时更新血量  1
         if(isBoss)
             UIManager.instance.UpdateBossHealth(enemyHP);
+        // 更新血量之后播放
+        anim.SetBool("dead", isDead);
         // 死亡终止活动
         if (isDead)
             return;

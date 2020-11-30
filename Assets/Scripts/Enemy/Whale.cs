@@ -8,7 +8,7 @@ public class Whale : Enemy, IDamageable
     private float scale = 1.2f;
 
     // 计算鲸鱼吞炸弹的次数 预留功能
-    private int tag = 0;
+    // private int tag = 0;
 
     public void GetHit(float damage)
     {
