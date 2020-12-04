@@ -64,14 +64,14 @@ public class Enemy : MonoBehaviour
         // 开始游戏直接进入巡逻状态
         TransitionToState(patrolState);
         // Slider绑定boss血量
-        if(isBoss)
+        if (isBoss)
             UIManager.instance.SetBossHealth(enemyHP);
     }
 
     public virtual void Update()
     {
         // 实时更新血量  1
-        if(isBoss)
+        if (isBoss)
             UIManager.instance.UpdateBossHealth(enemyHP);
         // 更新血量之后播放
         anim.SetBool("dead", isDead);
@@ -82,7 +82,6 @@ public class Enemy : MonoBehaviour
         _currentState.OnUpdate(this);
         // 持续更新动画，保证动画与Parameter保持一致
         anim.SetInteger("state", animState);
-        
     }
 
     /// <summary>
@@ -165,8 +164,9 @@ public class Enemy : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other)
     {
         // 如果攻击列表不包含，再添加进列表里 添加的是transform
-        // （人物没有炸弹才进行判断，有炸弹就不添加进列表里）如果死亡不添加进攻击列表
-        if (!attackList.Contains(other.transform) && !hasBomb && !isDead)
+        // （人物没有炸弹才进行判断，有炸弹就不添加进列表里）如果死亡不添加进攻击列表 
+        // 如果玩家死亡 不继续判断
+        if (!attackList.Contains(other.transform) && !hasBomb && !isDead && !GameManager.instance.gameOver)
             attackList.Add(other.transform);
     }
 
@@ -179,8 +179,8 @@ public class Enemy : MonoBehaviour
     /// 物体刚一进入检测范围播放动画 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // 不是死亡状态下开始一个协程 
-        if (!isDead)
+        // 不是死亡状态下开始一个协程  处理玩家死亡后敌人巡逻依旧会有警示标志的bug
+        if (!isDead && !GameManager.instance.gameOver)
             StartCoroutine(OnAlarm());
     }
 
