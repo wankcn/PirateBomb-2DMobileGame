@@ -4,12 +4,8 @@
 
 
 
-## Assets
-项目源，在本地创建Unity项目，直接替换Assets即可
-
-
-
 ## Documents
+
 游戏开发的流程文档
 
 
