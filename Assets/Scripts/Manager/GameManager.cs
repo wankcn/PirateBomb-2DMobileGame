@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -29,5 +30,12 @@ public class GameManager : MonoBehaviour
         // 玩家死亡游戏结束
         gameOver = player.isDead;
         UIManager.instance.GameOverUI(gameOver);
+    }
+
+    /// 重新加载游戏场景
+    public void RestartScene()
+    {
+        // GetActiveScene()获得当前的场景
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
