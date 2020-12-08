@@ -381,12 +381,12 @@ GameObject:
   - component: {fileID: 170468459}
   - component: {fileID: 170468458}
   m_Layer: 5
-  m_Name: GameOver
+  m_Name: GameOverPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &170468457
 RectTransform:
   m_ObjectHideFlags: 0
@@ -540,6 +540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1061402067}
+  gameOverPanel: {fileID: 170468456}
   pauseMenu: {fileID: 1959103948}
   bossHealthBar: {fileID: 753806055}
 --- !u!4 &216579851

@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     /// 代表游戏结束
     public bool gameOver;
+
     private PlayerController player;
 
     private void Awake()
@@ -27,5 +28,6 @@ public class GameManager : MonoBehaviour
     {
         // 玩家死亡游戏结束
         gameOver = player.isDead;
+        UIManager.instance.GameOverUI(gameOver);
     }
 }

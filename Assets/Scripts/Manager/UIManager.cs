@@ -13,6 +13,9 @@ public class UIManager : MonoBehaviour
     /// 获得血量UI
     public GameObject healthBar;
 
+    /// 获得游戏结束Panel
+    public GameObject gameOverPanel;
+
     [Header("UI Elements")] public GameObject pauseMenu;
     public Slider bossHealthBar; // boss的血量
 
@@ -79,5 +82,11 @@ public class UIManager : MonoBehaviour
     public void UpdateBossHealth(float hp)
     {
         bossHealthBar.value = hp;
+    }
+
+    /// 提供给GameManager进行调用使游戏结束弹出面板
+    public void GameOverUI(bool playDead)
+    {
+        gameOverPanel.SetActive(playDead);
     }
 }
