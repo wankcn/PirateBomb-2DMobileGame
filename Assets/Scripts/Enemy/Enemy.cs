@@ -51,6 +51,8 @@ public class Enemy : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         alarmSign = transform.GetChild(0).gameObject;
+        
+        GameManager.instance.isEnemy(this);
     }
 
     // 确保游戏一开始变量有值，优先State执行
@@ -77,7 +79,12 @@ public class Enemy : MonoBehaviour
         anim.SetBool("dead", isDead);
         // 死亡终止活动
         if (isDead)
+        {
+            GameManager.instance.EnemyDead(this);
             return;
+        }
+
+        
         // 当前敌人执行当前状态
         _currentState.OnUpdate(this);
         // 持续更新动画，保证动画与Parameter保持一致

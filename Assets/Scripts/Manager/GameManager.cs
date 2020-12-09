@@ -13,6 +13,10 @@ public class GameManager : MonoBehaviour
     public bool gameOver;
 
     private PlayerController player;
+    private Door doorExit;
+
+    // 将所有的敌人添加到一个List里，当list为空表示所有敌人被消灭，即打开门
+    public List<Enemy> enemies = new List<Enemy>();
 
     private void Awake()
     {
@@ -23,6 +27,7 @@ public class GameManager : MonoBehaviour
 
         // FindObjectOfType()寻找代码脚本的方式
         player = FindObjectOfType<PlayerController>();
+        doorExit = FindObjectOfType<Door>();
     }
 
     public void Update()
@@ -37,5 +42,19 @@ public class GameManager : MonoBehaviour
     {
         // GetActiveScene()获得当前的场景
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    /// 通过Enemy调用，当游戏开始把场景中的敌人添加到敌人列表
+    public void isEnemy(Enemy enemy)
+    {
+        enemies.Add(enemy);
+    }
+
+    /// 如果敌人死亡，把该敌人从敌人列表中移除
+    public void EnemyDead(Enemy enemy)
+    {
+        enemies.Remove(enemy);
+        if (enemies.Count == 0)
+            doorExit.OpenDoor();
     }
 }
