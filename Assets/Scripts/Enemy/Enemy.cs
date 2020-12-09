@@ -51,8 +51,6 @@ public class Enemy : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         alarmSign = transform.GetChild(0).gameObject;
-        
-        GameManager.instance.isEnemy(this);
     }
 
     // 确保游戏一开始变量有值，优先State执行
@@ -63,6 +61,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+        GameManager.instance.isEnemy(this);
         // 开始游戏直接进入巡逻状态
         TransitionToState(patrolState);
         // Slider绑定boss血量

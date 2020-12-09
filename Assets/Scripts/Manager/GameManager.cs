@@ -37,13 +37,6 @@ public class GameManager : MonoBehaviour
         UIManager.instance.GameOverUI(gameOver);
     }
 
-    /// 重新加载游戏场景
-    public void RestartScene()
-    {
-        // GetActiveScene()获得当前的场景
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
     /// 通过Enemy调用，当游戏开始把场景中的敌人添加到敌人列表
     public void isEnemy(Enemy enemy)
     {
@@ -56,5 +49,18 @@ public class GameManager : MonoBehaviour
         enemies.Remove(enemy);
         if (enemies.Count == 0)
             doorExit.OpenDoor();
+    }
+
+    /// 重新加载游戏场景
+    public void RestartScene()
+    {
+        // GetActiveScene()获得当前的场景
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    // 进入下一个关卡
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

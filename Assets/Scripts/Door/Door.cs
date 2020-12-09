@@ -31,6 +31,7 @@ public class Door : MonoBehaviour
     {
         if (other.CompareTag("Player")) ;
         // GameManager进入下一个房间
+        GameManager.instance.NextLevel();
 
     }
 }
