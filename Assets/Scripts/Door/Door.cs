@@ -12,6 +12,8 @@ public class Door : MonoBehaviour
 
     private void Start()
     {
+        // 使GameManager获取door的赋值
+        GameManager.instance.IsDoorExit(this);
         anim = GetComponent<Animator>();
         coll = GetComponent<BoxCollider2D>();
         // 碰撞器默认不启用
@@ -25,13 +27,12 @@ public class Door : MonoBehaviour
         // 打开门后重新启用碰撞器
         coll.enabled = true;
     }
-    
+
     // 当玩家碰撞到门的时候进入下一个场景（关卡）
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player")) ;
         // GameManager进入下一个房间
         GameManager.instance.NextLevel();
-
     }
 }

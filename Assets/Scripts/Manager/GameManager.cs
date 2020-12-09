@@ -25,9 +25,9 @@ public class GameManager : MonoBehaviour
         else
             Destroy(gameObject);
 
-        // FindObjectOfType()寻找代码脚本的方式
-        player = FindObjectOfType<PlayerController>();
-        doorExit = FindObjectOfType<Door>();
+        // // FindObjectOfType()寻找代码脚本的方式
+        // player = FindObjectOfType<PlayerController>();
+        // doorExit = FindObjectOfType<Door>();
     }
 
     public void Update()
@@ -62,5 +62,17 @@ public class GameManager : MonoBehaviour
     public void NextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    // 观察者模式，使场景中删除player也不产生报错
+    public void IsPlayer(PlayerController playerController)
+    {
+        player = playerController;
+    }
+
+    // 观察者模式，使场景中删除door也不产生报错
+    public void IsDoorExit(Door door)
+    {
+        doorExit = door;
     }
 }

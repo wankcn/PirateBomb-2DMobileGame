@@ -33,6 +33,9 @@ public class PlayerController : MonoBehaviour, IDamageable
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        // 使GameManager获取player的赋值
+        GameManager.instance.IsPlayer(this);
+        
     }
 
     void Update()
