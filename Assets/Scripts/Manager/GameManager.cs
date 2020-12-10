@@ -75,4 +75,10 @@ public class GameManager : MonoBehaviour
     {
         doorExit = door;
     }
+
+    // 结束游戏，只在生成后生效
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
