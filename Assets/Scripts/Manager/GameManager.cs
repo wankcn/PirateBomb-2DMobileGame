@@ -48,7 +48,11 @@ public class GameManager : MonoBehaviour
     {
         enemies.Remove(enemy);
         if (enemies.Count == 0)
+        {
             doorExit.OpenDoor();
+            SaveData();
+        }
+        
     }
 
     /// 重新加载游戏场景
@@ -56,6 +60,9 @@ public class GameManager : MonoBehaviour
     {
         // GetActiveScene()获得当前的场景
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        // 重新加载时玩家恢复数据 删掉键值重新创建
+        PlayerPrefs.DeleteKey("PlayerHealth");
+        
     }
 
     // 进入下一个关卡
@@ -74,6 +81,26 @@ public class GameManager : MonoBehaviour
     public void IsDoorExit(Door door)
     {
         doorExit = door;
+    }
+
+
+    // 保存血量，加载血量的函数方法
+    // 加载血量 判断有没有键值，没有就初始化为3，有的话获得当前键值的血量
+    public float LoadHealth()
+    {
+        // 如果存储数据中没有PlayerHealth键值就来设置它 代表游戏的初始化
+        if (!PlayerPrefs.HasKey("PlayerHealth"))
+            PlayerPrefs.SetFloat("PlayerHealth", 3f);
+        // 从一个场景到另外一个场景已经存在Key PlayerHealth，设置临时变量从键值里取值
+        float curHealth = PlayerPrefs.GetFloat("PlayerHealth");
+        return curHealth;
+    }
+    
+    // 存储Player当前的血量
+    public void SaveData()
+    {
+        PlayerPrefs.SetFloat("PlayerHealth",player.playerHP);
+        PlayerPrefs.Save(); // 创建保存文件
     }
 
     // 结束游戏，只在生成后生效

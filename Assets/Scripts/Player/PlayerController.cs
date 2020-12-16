@@ -35,7 +35,9 @@ public class PlayerController : MonoBehaviour, IDamageable
         anim = GetComponent<Animator>();
         // 使GameManager获取player的赋值
         GameManager.instance.IsPlayer(this);
-        
+        // 切换场景的时候会执行一次Statr，会更新血条（不包含UI）
+        playerHP = GameManager.instance.LoadHealth();
+        UIManager.instance.UpdateHP(playerHP);
     }
 
     void Update()
@@ -154,7 +156,7 @@ public class PlayerController : MonoBehaviour, IDamageable
             }
 
             anim.SetTrigger("hit");
-            
+
             // 更新UI面板你
             UIManager.instance.UpdateHP(playerHP);
         }
