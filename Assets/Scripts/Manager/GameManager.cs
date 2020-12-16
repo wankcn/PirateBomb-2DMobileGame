@@ -32,8 +32,9 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
-        // 玩家死亡游戏结束
-        gameOver = player.isDead;
+        // 玩家死亡游戏结束 避免没有Player时报错
+        if (player != null)
+            gameOver = player.isDead;
         UIManager.instance.GameOverUI(gameOver);
     }
 
@@ -52,7 +53,6 @@ public class GameManager : MonoBehaviour
             doorExit.OpenDoor();
             SaveData();
         }
-        
     }
 
     /// 重新加载游戏场景
@@ -62,7 +62,6 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         // 重新加载时玩家恢复数据 删掉键值重新创建
         PlayerPrefs.DeleteKey("PlayerHealth");
-        
     }
 
     // 进入下一个关卡
@@ -95,11 +94,11 @@ public class GameManager : MonoBehaviour
         float curHealth = PlayerPrefs.GetFloat("PlayerHealth");
         return curHealth;
     }
-    
+
     // 存储Player当前的血量
     public void SaveData()
     {
-        PlayerPrefs.SetFloat("PlayerHealth",player.playerHP);
+        PlayerPrefs.SetFloat("PlayerHealth", player.playerHP);
         PlayerPrefs.Save(); // 创建保存文件
     }
 
