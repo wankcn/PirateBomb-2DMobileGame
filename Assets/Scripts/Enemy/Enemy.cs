@@ -82,9 +82,7 @@ public class Enemy : MonoBehaviour
             GameManager.instance.EnemyDead(this);
             return;
         }
-
-
-​        
+        
         // 当前敌人执行当前状态
         _currentState.OnUpdate(this);
         // 持续更新动画，保证动画与Parameter保持一致
