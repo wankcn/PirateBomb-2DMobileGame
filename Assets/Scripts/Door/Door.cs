@@ -31,8 +31,8 @@ public class Door : MonoBehaviour
     // 当玩家碰撞到门的时候进入下一个场景（关卡）
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) ;
-        // GameManager进入下一个房间
-        GameManager.instance.NextLevel();
+        if (other.CompareTag("Player"))
+            // GameManager进入下一个房间
+            GameManager.instance.NextLevel();
     }
 }
