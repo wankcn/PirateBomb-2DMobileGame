@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
         // GetActiveScene()获得当前的场景
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         // 重新加载时玩家恢复数据 删掉键值重新创建
-        PlayerPrefs.DeleteKey("PlayerHealth");
+        // PlayerPrefs.DeleteKey("PlayerHealth");
         // 使游戏正常进行
         Time.timeScale = 1;
     }
@@ -84,6 +84,13 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(PlayerPrefs.GetInt("SceneIndex"));
         else
             NewGame();
+    }
+    
+    // 返回主菜单
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(0);
+        Time.timeScale = 1;
     }
 
 
