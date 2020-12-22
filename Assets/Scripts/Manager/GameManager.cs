@@ -62,6 +62,8 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         // 重新加载时玩家恢复数据 删掉键值重新创建
         PlayerPrefs.DeleteKey("PlayerHealth");
+        // 使游戏正常进行
+        Time.timeScale = 1;
     }
 
     // --------------------- LoadGame ---------------------
@@ -70,15 +72,12 @@ public class GameManager : MonoBehaviour
     {
         // 先删除所有保存的进度和数据
         PlayerPrefs.DeleteAll();
-        Debug.LogError("--- 2 ---");
         // 使用场景编号加载
         SceneManager.LoadScene(1);
-        Debug.LogError("--- 3 ---");
     }
 
     public void ContinueGame()
     {
-        Debug.LogError("--- 1 ---");
         // 第一次运行有数据继续游戏没有数据应该是开始新游戏
         if (PlayerPrefs.HasKey("SceneIndex"))
             // 需要先保存场景序号（在SaveData中）
