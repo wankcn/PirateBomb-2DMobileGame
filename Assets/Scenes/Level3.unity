@@ -7793,7 +7793,7 @@ PrefabInstance:
     - target: {fileID: 9056910803589346858, guid: 3c2da2afaa5b34235a4b21111474fe90,
         type: 3}
       propertyPath: m_Name
-      value: Canvas
+      value: LevelsUI
       objectReference: {fileID: 0}
     - target: {fileID: 9056910803589346862, guid: 3c2da2afaa5b34235a4b21111474fe90,
         type: 3}

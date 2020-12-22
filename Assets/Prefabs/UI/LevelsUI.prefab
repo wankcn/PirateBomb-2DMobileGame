@@ -240,7 +240,7 @@ RectTransform:
   m_Children:
   - {fileID: 8540174036514944303}
   m_Father: {fileID: 9056910802365483884}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -522,7 +522,7 @@ RectTransform:
   m_Children:
   - {fileID: 9056910803946349555}
   m_Father: {fileID: 9056910802365483884}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1068,8 +1068,8 @@ RectTransform:
   - {fileID: 9056910803594003197}
   - {fileID: 9056910802176694355}
   - {fileID: 9056910802305671725}
-  - {fileID: 9056910802048001698}
   - {fileID: 256470613763344339}
+  - {fileID: 9056910802048001698}
   m_Father: {fileID: 9056910803589346862}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1847,7 +1847,7 @@ GameObject:
   - component: {fileID: 9056910803589346860}
   - component: {fileID: 9056910803589346861}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: LevelsUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
