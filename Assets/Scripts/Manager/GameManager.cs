@@ -64,6 +64,30 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.DeleteKey("PlayerHealth");
     }
 
+    // --------------------- LoadGame ---------------------
+    // 新的游戏直接从第一个关卡开始，直接加载场景，继续游戏加载保存的场景以及玩家血量
+    public void NewGame()
+    {
+        // 先删除所有保存的进度和数据
+        PlayerPrefs.DeleteAll();
+        Debug.LogError("--- 2 ---");
+        // 使用场景编号加载
+        SceneManager.LoadScene(1);
+        Debug.LogError("--- 3 ---");
+    }
+
+    public void ContinueGame()
+    {
+        Debug.LogError("--- 1 ---");
+        // 第一次运行有数据继续游戏没有数据应该是开始新游戏
+        if (PlayerPrefs.HasKey("SceneIndex"))
+            // 需要先保存场景序号（在SaveData中）
+            SceneManager.LoadScene(PlayerPrefs.GetInt("SceneIndex"));
+        else
+            NewGame();
+    }
+
+
     // 进入下一个关卡
     public void NextLevel()
     {
@@ -99,6 +123,8 @@ public class GameManager : MonoBehaviour
     public void SaveData()
     {
         PlayerPrefs.SetFloat("PlayerHealth", player.playerHP);
+        // 保存门开的场景编号+1 即下一关的场景编号，继续游戏时直接加载SceneIndex
+        PlayerPrefs.SetInt("SceneIndex", SceneManager.GetActiveScene().buildIndex + 1);
         PlayerPrefs.Save(); // 创建保存文件
     }
 
