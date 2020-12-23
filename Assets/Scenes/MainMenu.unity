@@ -425,7 +425,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456103701}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.96, y: 0.03, z: 0}
+  m_LocalPosition: {x: -0.03, y: 0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 116401352}
@@ -7743,7 +7743,7 @@ PrefabInstance:
     - target: {fileID: 4557967696312504057, guid: 8c5398539d0d34abd8f5c6ec374e4ce2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.42
+      value: -5.22
       objectReference: {fileID: 0}
     - target: {fileID: 4557967696312504057, guid: 8c5398539d0d34abd8f5c6ec374e4ce2,
         type: 3}
@@ -7979,7 +7979,7 @@ PrefabInstance:
     - target: {fileID: 7994038620306320563, guid: d5c59a3a8106843aa9edba3a26b85229,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.938
+      value: -4.53
       objectReference: {fileID: 0}
     - target: {fileID: 7994038620306320563, guid: d5c59a3a8106843aa9edba3a26b85229,
         type: 3}
@@ -8058,7 +8058,7 @@ PrefabInstance:
     - target: {fileID: 8286113293790183062, guid: 628463896c2dc492a922793f2ffc4a9d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.418
+      value: -3.86
       objectReference: {fileID: 0}
     - target: {fileID: 8286113293790183062, guid: 628463896c2dc492a922793f2ffc4a9d,
         type: 3}
@@ -8119,25 +8119,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8719272316203453685, guid: e22cdb7c40b374af0ab692577110a8e8,
-        type: 3}
+    - target: {fileID: 733190894, guid: e22cdb7c40b374af0ab692577110a8e8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000015258789
+      value: 540
       objectReference: {fileID: 0}
-    - target: {fileID: 8719272316203453685, guid: e22cdb7c40b374af0ab692577110a8e8,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 8719272316203453685, guid: e22cdb7c40b374af0ab692577110a8e8,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 8719272316203453685, guid: e22cdb7c40b374af0ab692577110a8e8,
-        type: 3}
+    - target: {fileID: 733190894, guid: e22cdb7c40b374af0ab692577110a8e8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 253
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 8719272316311040937, guid: e22cdb7c40b374af0ab692577110a8e8,
         type: 3}
@@ -8261,33 +8249,8 @@ PrefabInstance:
       objectReference: {fileID: 1114888994}
     - target: {fileID: 8719272317606232048, guid: e22cdb7c40b374af0ab692577110a8e8,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8719272317606232048, guid: e22cdb7c40b374af0ab692577110a8e8,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8719272317606232048, guid: e22cdb7c40b374af0ab692577110a8e8,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8719272317606232048, guid: e22cdb7c40b374af0ab692577110a8e8,
-        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1114888994}
-    - target: {fileID: 8719272317606232048, guid: e22cdb7c40b374af0ab692577110a8e8,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: QuitGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 8719272317606232048, guid: e22cdb7c40b374af0ab692577110a8e8,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e22cdb7c40b374af0ab692577110a8e8, type: 3}
