@@ -3287,6 +3287,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &701165990 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 81229574824192334, guid: 4fe278da2bb434b83875969f6db59e28,
+    type: 3}
+  m_PrefabInstance: {fileID: 81229574738378324}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d60fb1dd2cc734f5aa24ad583c109966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &752226286 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8884371181196639484, guid: 366bc6af2929e42b99914842dbeb4dac,
@@ -7026,7 +7038,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1096783802}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 701165990}
+        m_MethodName: Attack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1096783802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7498,7 +7521,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2065010933}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 701165990}
+        m_MethodName: ButtonJump
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2065010933
 MonoBehaviour:
   m_ObjectHideFlags: 0
