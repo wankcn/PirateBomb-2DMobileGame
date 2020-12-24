@@ -8119,23 +8119,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 733190894, guid: e22cdb7c40b374af0ab692577110a8e8, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 540
-      objectReference: {fileID: 0}
-    - target: {fileID: 733190894, guid: e22cdb7c40b374af0ab692577110a8e8, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 70
-      objectReference: {fileID: 0}
     - target: {fileID: 5349161349660105481, guid: e22cdb7c40b374af0ab692577110a8e8,
         type: 3}
       propertyPath: m_Text
-      value: "\xA9\uFE0Fby wankcn"
+      value: "\xA9\uFE0Fwankcn"
       objectReference: {fileID: 0}
     - target: {fileID: 8719272316311040937, guid: e22cdb7c40b374af0ab692577110a8e8,
         type: 3}
       propertyPath: m_Name
       value: MainUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 8719272316311040940, guid: e22cdb7c40b374af0ab692577110a8e8,
+        type: 3}
+      propertyPath: m_PixelPerfect
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8719272316311040941, guid: e22cdb7c40b374af0ab692577110a8e8,
         type: 3}
