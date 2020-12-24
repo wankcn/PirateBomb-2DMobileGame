@@ -827,10 +827,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 03ed2b66-d16c-4a53-bef8-d2e9cfa831bc
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: PirateBomb
+  organizationId: wankcn
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
