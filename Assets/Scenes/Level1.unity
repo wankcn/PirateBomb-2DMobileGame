@@ -4742,6 +4742,11 @@ PrefabInstance:
       propertyPath: enemyHP
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2843473256277780765, guid: 04b75aa61a03f45f2946f64f2ac8ff58,
+        type: 3}
+      propertyPath: skillRate
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2843473256356491477, guid: 04b75aa61a03f45f2946f64f2ac8ff58,
         type: 3}
       propertyPath: m_LocalPosition.x

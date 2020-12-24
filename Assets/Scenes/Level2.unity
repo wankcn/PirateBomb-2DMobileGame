@@ -2081,6 +2081,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1573652536, guid: 96b310120a1484604b8f001b7787702c, type: 3}
+      propertyPath: enemyHP
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1735140179, guid: 96b310120a1484604b8f001b7787702c, type: 3}
       propertyPath: bombAviable
       value: 1
