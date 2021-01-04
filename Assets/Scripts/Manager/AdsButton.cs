@@ -21,7 +21,7 @@ public class AdsButton : MonoBehaviour, IUnityAdsListener
     void Start()
     {
         adsButton = GetComponent<Button>();
-        
+
         // // 广告是否已经在后台的服务器加载就绪，如果加载好是可以播放的，按钮可以点按
         // adsButton.interactable = Advertisement.IsReady(placementId);
         // 当Button按下的时候为Button添加函数方法
@@ -61,7 +61,15 @@ public class AdsButton : MonoBehaviour, IUnityAdsListener
         {
             case ShowResult.Failed: break;
             case ShowResult.Skipped: break;
-            case ShowResult.Finished: Debug.Log("广告播放结束，发放奖励！");break;
+            case ShowResult.Finished:
+                Debug.Log("广告播放结束，发放奖励！");
+                // 玩家血值重新改为3
+                FindObjectOfType<PlayerController>().playerHP = 3;
+                // 修改死亡状态
+                FindObjectOfType<PlayerController>().isDead = false;
+                // 更新血量UI
+                UIManager.instance.UpdateHP(FindObjectOfType<PlayerController>().playerHP);
+                break;
         }
     }
 }
