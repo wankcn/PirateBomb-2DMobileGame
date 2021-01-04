@@ -74,16 +74,14 @@ public class PlayerController : MonoBehaviour, IDamageable
     // 执行人物移动的方法 需要获取按键
     void Movement()
     {
-
         // // float horizontalInput = Input.GetAxis("Horizontal"); // 获取的值从-1～1，包括小数
-        //
         // float horizontalInput = Input.GetAxisRaw("Horizontal"); // 获取的值从-1～1，不包含小数
         // rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y); // 使用物理向量的速度固定移动速度 y保持不变，x为输入*速度
         //
         // // 修改transform的本地坐标来进行翻转
         // if (horizontalInput != 0)
         //     transform.localScale = new Vector3(horizontalInput, 1, 1);
-
+        
         // 操纵杆
         float horizontalInput = fixedJoystick.Horizontal;
         rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
